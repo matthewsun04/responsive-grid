@@ -114,10 +114,9 @@ nav a:hover, nav a:focus {
   transition: top 1s ease-out;
 
   z-index: 1;
-  display: block;
-  position: absolute;
-  top: -40px;
-  z-index: 1;
+ 
+  position: fixed;
+  margin-top: -40px;
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
@@ -162,7 +161,7 @@ first div in the grid  and place it in the grid. */
 }
 
 .about-image, .method-image, .clients-image, .contact-image {
-  grid-column: 1/-1;
+  grid-column: 1/ 4;
   max-height: 600px;
   overflow: hidden;
   }
