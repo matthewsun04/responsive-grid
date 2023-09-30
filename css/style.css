@@ -201,14 +201,38 @@ overflow: scroll;
 
 
 /* Add your media query here */
-
-
+@media screen and (min-width: 800px) {
   /* Step 9: Write the selector/rule property to style the nav element */
+
+nav {
+  text-align: right;
+  padding: 30px 0px;
+}
+
+
+
 
  
   /* Step 10: Write the selector/rule property to update the .container class */
 
-
+  .container {
+    grid-template-columns: 50px auto 500px auto 50px;
+  
+  }
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+  .about, .clients, .method-image, .contact-image {
+    grid-column: 3/ span 2;
+  
+  }
+  
+  .method, .contact, .about-image, and .clients-image {
+    grid-column: 2/ span 2;
+    
+  
+  }
+}
+
+
+
 
 
