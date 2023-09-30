@@ -90,9 +90,6 @@ footer{
   }
   /* New stuff added */
 
-
-
-
 }
 
 
@@ -136,37 +133,39 @@ nav a:hover, nav a:focus {
 
 /* Step 4: Write selector/rule property to style the container */
 
-
-/* Step 5: Write selector/rule property to add the background image to the 
-first div in the grid  and place it in the grid. */
-
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   gap: 15px;
 }
 
+/* Step 5: Write selector/rule property to add the background image to the 
+first div in the grid  and place it in the grid. */
+
 .container > :first-child {
-  grid-column: 1/-1;
+  grid-column: 1/4;
   min-height: 500px;
   background-image: url("../images/header.jpg");
 
-  background-position:center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
 }
 
-.about, .method, .clients, .contact {
-  grid-column: 2;
-  column-span: 1;
+
+
+/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
+ four rows in the grid. */
+
+ .about, .method, .clients, .contact {
+  grid-column: 2/3;
+
 }
 
 .about, .about-image{
   grid-row: 2;
 }
 
-.method, .about-image{
+.method, .method-image{
 grid-row: 3;
 }
 
@@ -179,29 +178,25 @@ grid-row: 5;
 }
 
 .about-image, .method-image, .clients-image, .contact-image {
-grid-column: 1 / -1;
+grid-column: 1 / 4;
 max-height: 600px;
 overflow: hidden;
 }
 
-.text-block{
-align-self: center;
-max-height: 250px;
-overflow: scroll;
-}
-
-
-/* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
- four rows in the grid. */
-
-      /*This will be a lot of rules.... but be strategic and combine seletors*/
-
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
 
+ .text-block{
 
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  max-height: 250px;
+  overflow: scroll;
+  }
+  
 /* Add your media query here */
-@media screen and (min-width: 800px) {
+@media (min-width: 800px) {
   /* Step 9: Write the selector/rule property to style the nav element */
 
 nav {
@@ -209,10 +204,6 @@ nav {
   padding: 30px 0px;
 }
 
-
-
-
- 
   /* Step 10: Write the selector/rule property to update the .container class */
 
   .container {
@@ -221,12 +212,12 @@ nav {
   }
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
   .about, .clients, .method-image, .contact-image {
-    grid-column: 3/ span 2;
+    grid-column: 3/ 5;
   
   }
   
   .method, .contact, .about-image, and .clients-image {
-    grid-column: 2/ span 2;
+    grid-column: 2/ 4;
     
   
   }
